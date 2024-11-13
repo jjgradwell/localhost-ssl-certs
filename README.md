@@ -39,8 +39,8 @@ SSLCertificateKeyFile "/etc/ssl/private/private.key"
 
 ## To install certificate on MacOS
 
-Open Keychain Access
-Click on File > Import Items
-Select the server.crt file created earlier, and enter your password to allow
-Then right click on the certificate that was imported, and select get info
-Then open the "Trust" section and modify 'When using this certifcate:' to 'always trust'
+- Open Keychain Access
+- Click on File > Import Items
+- Select the server.crt file created earlier, and enter your password to allow
+- Then right click on the certificate that was imported, and select get info
+- Then open the "Trust" section and modify 'When using this certifcate:' to 'always trust'
