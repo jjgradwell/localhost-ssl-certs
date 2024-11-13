@@ -4,9 +4,15 @@ Generate an SSL certificate for localhost, and private IP ranges
 
 ## To generate an SSL certificate for localhost and private IP ranges
 
+Create the directories to hold the key/cert files
+```
+sudo mkdir /etc/ssl/private
+sudo mkdir /etc/ssl/certs
+```
+
 To create the .cert and .key files for your server, execute the following command, replacing the 192.168.0.79 for the internal IP address of your server if running on a separate machine
 
-```openssl req -x509 -newkey rsa:4096 -sha256 -days 3650 -nodes -keyout /etc/ssl/private/private.key -out /etc/ssl/certs/server.crt -subj "/CN=localhost" -addext "subjectAltName=DNS:localhost,IP:127.0.0.1,IP:::1,IP:192.168.0.79"```
+```sudo openssl req -x509 -newkey rsa:4096 -sha256 -days 3650 -nodes -keyout /etc/ssl/private/private.key -out /etc/ssl/certs/server.crt -subj "/CN=localhost" -addext "subjectAltName=DNS:localhost,IP:127.0.0.1,IP:::1,IP:192.168.0.79"```
 
 Once the files have been generated, you need to modify your server virtual hosts/server blocks to use them.
 
