@@ -27,15 +27,15 @@ SSLCertificateKeyFile "/etc/ssl/private/private.key"
 
 ## To install certificate on Android devices
 
-Open your device's Settings app.
-Tap Security & privacy And then More security settings and then Encryption & credentials.
-Tap Install a certificate And then Wi-Fi certificate.
-Tap Menu .
-Tap where you saved the certificate.
-Tap the file.
-If needed, enter the key store password. Tap OK.
-Enter a name for the certificate.
-Tap OK.
+- Open your device's Settings app.
+- Tap Security & privacy And then More security settings and then Encryption & credentials.
+- Tap Install a certificate And then Wi-Fi certificate.
+- Tap Menu
+- Tap where you saved the certificate.
+- Tap the file.
+- If needed, enter the key store password. Tap OK.
+- Enter a name for the certificate.
+- Tap OK.
 
 ## To install certificate on MacOS
 
