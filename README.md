@@ -1,6 +1,4 @@
-# ssl-localhost
 Generate an SSL certificate for localhost, and private IP ranges
-
 
 ## To generate an SSL certificate for localhost and private IP ranges
 
@@ -38,7 +36,6 @@ Tap the file.
 If needed, enter the key store password. Tap OK.
 Enter a name for the certificate.
 Tap OK.
-
 
 ## To install certificate on MacOS
 
