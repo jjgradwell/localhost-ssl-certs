@@ -4,13 +4,12 @@ Generate an SSL certificate for localhost, and private IP ranges
 
 ## To generate an SSL certificate for localhost and private IP ranges
 
-Create the directories to hold the key/cert files
+Create the directories to hold the key/cert files, if they dont already exist
 ```
-sudo mkdir /etc/ssl/private
-sudo mkdir /etc/ssl/certs
+sudo mkdir /etc/ssl/{private,certs}
 ```
 
-To create the .cert and .key files for your server, execute the following command, replacing the 192.168.0.79 for the internal IP address of your server if running on a separate machine.
+To create the .cert and .key files for your server, execute the following command, replacing the **192.168.0.79** for the internal IP address of your server if running on a separate machine.
 
 ```
 sudo openssl req -x509 -newkey rsa:4096 -sha256 -days 3650 -nodes -keyout /etc/ssl/private/private.key -out /etc/ssl/certs/server.crt -subj "/CN=localhost" -addext "subjectAltName=DNS:localhost,IP:127.0.0.1,IP:::1,IP:192.168.0.79"
@@ -18,7 +17,7 @@ sudo openssl req -x509 -newkey rsa:4096 -sha256 -days 3650 -nodes -keyout /etc/s
 
 The first three items in the **subjectAltName** all to reference localhost, and the final ip is the internal IP of your server.
 
-Once the files have been generated, you need to modify your server virtual hosts/server blocks to use them.
+Once the files have been generated, you need to modify your server virtual host to use them.
 
 ## Apache Server
 Apache change the following lines to your new certificate locations
@@ -41,10 +40,10 @@ Enter a name for the certificate.
 Tap OK.
 
 
-# To install certificate on MacOS
+## To install certificate on MacOS
 
 Open Keychain Access
 Click on File > Import Items
 Select the server.crt file created earlier, and enter your password to allow
 Then right click on the certificate that was imported, and select get info
-Then open the "Trust" section and modify 'When using this certifcate:' to always Trust
+Then open the "Trust" section and modify 'When using this certifcate:' to 'always trust'
