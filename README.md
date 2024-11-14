@@ -13,7 +13,7 @@ To create the .cert and .key files for your server, execute the following comman
 sudo openssl req -x509 -newkey rsa:4096 -sha256 -days 3650 -nodes -keyout /etc/ssl/private/private.key -out /etc/ssl/certs/server.crt -subj "/CN=localhost" -addext "subjectAltName=DNS:localhost,IP:127.0.0.1,IP:::1,IP:192.168.0.79"
 ```
 
-The first three items in the **subjectAltName** all to reference localhost, and the final ip is the internal IP of your server.
+The first three items in the **subjectAltName** all reference localhost, and the final ip is the internal IP of your server.
 
 Once the files have been generated, you need to modify your server virtual host to use them.
 
